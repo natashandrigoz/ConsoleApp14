@@ -44,15 +44,38 @@ namespace ConsoleApp14
 
             //3. Заполнить одномерный массив соответствующими индексами (по формуле)
             //и вывести с использованием цикла foreach
-            int[] omas = new int[5];
-            for (int i=0;i<omas.Length;i++)
+            //int[] omas = new int[5];
+            //int i;
+            //for (i = 0; i < omas.Length; i++)
+            //{
+            //    omas[i] = i;
+            //}
+            //Console.WriteLine("Вывод заполненного одномерного массива");
+            //1-й способ вывода
+            //for (int i = 0; i < omas.Length; i++)
+            //{
+            //    Console.WriteLine($"omas[{i}]= {omas[i]}");
+            //}
+            //2-й способ вывода
+            //foreach (int element in omas)
+            //{
+            //    Console.Write($"{element}\t");
+            //}
+
+            //4. Заполнить одномерный массив случайным образом и
+            //вывести на экран с использованием цикла foreach
+            Console.Write("Размер одномерного массива n: ");
+            byte n = byte.Parse(Console.ReadLine());
+            int[] omas = new int[n];
+            int i;
+            Random random = new Random();
+            for(i = 0; i < omas.Length; i++)
             {
-                omas[i] = i;
+                omas[i] = random.Next(-10,10); 
             }
-            Console.WriteLine("Вывод заполненного одномерного массива");
-            for (int i = 0; i < omas.Length; i++)
+            foreach (int element in omas)
             {
-                Console.WriteLine($"omas[{i}]= {omas[i]}");
+                Console.Write($"{element}\t");
             }
             Console.Read();
         }
